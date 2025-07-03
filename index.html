@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 생에 첫 홈페이지 - Personal Brand</title>
+    <title>내 생에 첫 홈페이지 - Sanrio Style</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,66 +14,87 @@
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Nunito', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f8f8;
+            color: #5a5a5a;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe8f0 50%, #fff0e8 100%);
+            overflow-x: hidden;
         }
 
-        /* 기존 스타일 유지하면서 개선 */
+        /* 배경 장식 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 192, 203, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(255, 218, 185, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* 헤더 타이틀 스타일 */
         h1 {
-            color: #c9a876; /* 골드 톤으로 변경 */
+            color: #ff69b4;
             font-size: 3.5rem;
             text-align: center;
             margin: 2rem 0;
-            font-weight: 300;
+            font-weight: 700;
             letter-spacing: 2px;
-            text-shadow: none;
-            animation: fadeIn 2s ease-out;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+            animation: bounce 2s infinite;
         }
 
         h2 {
-            color: #2c2c2c; /* 다크 그레이로 변경 */
+            color: #ff1493;
             font-size: 2rem;
             margin: 1.5rem 0;
             text-align: center;
-            font-weight: 300;
+            font-weight: 600;
             letter-spacing: 1px;
         }
 
         h3, h4, h5, h6 {
             margin: 1rem 0;
             text-align: center;
-            color: #666;
-            font-weight: 300;
+            color: #ff69b4;
+            font-weight: 600;
         }
 
         .one {
-            color: #c9a876; /* 골드 톤으로 변경 */
+            color: #ff69b4;
+            font-weight: 700;
         }
 
         .two {
-            background: linear-gradient(135deg, #c9a876, #d4af37);
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
             padding: 2rem;
-            border-radius: 0;
+            border-radius: 25px;
             color: white;
-            font-weight: 300;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
         }
 
         .three {
             font-size: 30px;
-            font-weight: 300;
+            font-weight: 700;
             letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
         }
 
         /* 헤더 */
         .header {
-            background: white;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
             padding: 1rem 0;
+            border-bottom: 3px solid #ff69b4;
         }
 
         .header-content {
@@ -84,54 +107,73 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 300;
-            color: #c9a876;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff1493;
             letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: #333;
+            color: #ff1493;
             text-decoration: none;
-            font-weight: 300;
+            font-weight: 600;
             letter-spacing: 1px;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
             text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 2px solid transparent;
         }
 
         .nav-links a:hover {
-            color: #c9a876;
+            background: white;
+            color: #ff69b4;
+            border-color: #ff69b4;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
         }
 
         /* 히어로 섹션 */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1920" height="800" viewBox="0 0 1920 800"%3E%3Cdefs%3E%3ClinearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"%3E%3Cstop offset="0%" style="stop-color:%23f8f8f8;stop-opacity:1" /%3E%3Cstop offset="100%" style="stop-color:%23e8e8e8;stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="1920" height="800" fill="url(%23grad)"/%3E%3C/svg%3E');
-            background-size: cover;
-            background-position: center;
-            height: 70vh;
+            background: linear-gradient(135deg, #ffb6c1 0%, #ffc0cb 25%, #ffd1dc 50%, #ffe4e1 75%, #fff0f5 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: #ff1493;
             position: relative;
+            overflow: hidden;
         }
 
         .hero::before {
-            content: '';
+            content: '🌸 💖 🎀 ✨ 🌈 🦄 🍓 🌸 💖 🎀 ✨ 🌈 🦄 🍓';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(201,168,118,0.8), rgba(212,175,55,0.6));
+            top: 10%;
+            left: -100%;
+            font-size: 2rem;
+            animation: float 20s linear infinite;
+            opacity: 0.7;
+        }
+
+        .hero::after {
+            content: '🌸 💖 🎀 ✨ 🌈 🦄 🍓 🌸 💖 🎀 ✨ 🌈 🦄 🍓';
+            position: absolute;
+            bottom: 10%;
+            right: -100%;
+            font-size: 2rem;
+            animation: float-reverse 25s linear infinite;
+            opacity: 0.7;
         }
 
         .hero-content {
@@ -140,48 +182,54 @@
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            font-weight: 300;
+            font-size: 1.4rem;
+            font-weight: 600;
             letter-spacing: 2px;
             margin-bottom: 1rem;
-            opacity: 0.9;
+            color: #ff69b4;
             text-transform: uppercase;
         }
 
         .hero-title {
-            font-size: 4rem;
-            font-weight: 300;
+            font-size: 4.5rem;
+            font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: 3px;
             line-height: 1.2;
+            text-shadow: 3px 3px 6px rgba(255, 20, 147, 0.3);
         }
 
         .hero-description {
-            font-size: 1.1rem;
-            font-weight: 300;
+            font-size: 1.3rem;
+            font-weight: 500;
             max-width: 600px;
             margin: 0 auto 3rem;
-            opacity: 0.9;
             line-height: 1.8;
+            color: #d8577a;
         }
 
         .cta-button {
             display: inline-block;
-            background: transparent;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
             color: white;
-            padding: 1rem 3rem;
+            padding: 1.2rem 3rem;
             text-decoration: none;
-            border: 2px solid white;
-            font-weight: 300;
-            font-size: 0.9rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            border: 3px solid transparent;
         }
 
         .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.6);
             background: white;
-            color: #c9a876;
+            color: #ff69b4;
+            border-color: #ff69b4;
         }
 
         /* 컨테이너 */
@@ -194,33 +242,34 @@
         /* 섹션 스타일 */
         .section {
             padding: 5rem 0;
-            background: white;
+            background: rgba(255, 255, 255, 0.8);
             margin-bottom: 0;
+            position: relative;
         }
 
         .section:nth-child(even) {
-            background: #f8f8f8;
+            background: rgba(255, 240, 245, 0.8);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #333;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ff1493;
             margin-bottom: 3rem;
             letter-spacing: 2px;
             position: relative;
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
         }
 
         .section-title::after {
-            content: '';
+            content: '💖';
             position: absolute;
-            bottom: -15px;
+            bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 1px;
-            background: #c9a876;
+            font-size: 2rem;
+            animation: pulse 2s infinite;
         }
 
         /* 리스트 섹션 */
@@ -232,22 +281,25 @@
         }
 
         .list-container {
-            background: white;
+            background: linear-gradient(135deg, #fff0f5, #ffeef8);
             padding: 3rem;
-            border-radius: 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+            transition: all 0.3s ease;
+            border: 3px solid #ffc0cb;
         }
 
         .list-container:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.3);
+            border-color: #ff69b4;
         }
 
         .list-container h3 {
-            color: #c9a876;
+            color: #ff1493;
             margin-bottom: 2rem;
-            font-size: 1.5rem;
-            font-weight: 300;
+            font-size: 1.8rem;
+            font-weight: 700;
             letter-spacing: 1px;
         }
 
@@ -258,36 +310,38 @@
 
         ol li, ul li {
             margin: 1rem 0;
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
-            font-weight: 300;
-            transition: color 0.3s ease;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
+            border: 2px solid #ffc0cb;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
         }
 
         ol li::before {
-            content: counter(list-counter);
-            counter-increment: list-counter;
+            content: '🌸';
             position: absolute;
-            left: -2rem;
-            color: #c9a876;
-            font-weight: 400;
-        }
-
-        ol {
-            counter-reset: list-counter;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
         }
 
         ul li::before {
-            content: '•';
-            color: #c9a876;
-            font-weight: bold;
+            content: '💖';
             position: absolute;
-            left: -1rem;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
         }
 
         ol li:hover, ul li:hover {
-            color: #c9a876;
+            background: #ffeef8;
+            transform: translateX(10px);
+            border-color: #ff69b4;
         }
 
         /* 이미지 섹션 */
@@ -299,21 +353,21 @@
         .image-gallery {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
             margin-top: 3rem;
         }
 
         .image-gallery img {
-            border-radius: 0;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
             transition: all 0.3s ease;
-            filter: grayscale(20%);
+            border: 5px solid #ffc0cb;
         }
 
         .image-gallery img:hover {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 25px 50px rgba(255, 105, 180, 0.4);
+            border-color: #ff69b4;
         }
 
         /* 비디오 섹션 */
@@ -329,10 +383,11 @@
         }
 
         iframe {
-            border-radius: 0;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
             width: 100%;
             height: 450px;
+            border: 5px solid #ffc0cb;
         }
 
         /* 텍스트 섹션 */
@@ -348,72 +403,145 @@
         }
 
         .text-card {
-            background: white;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #fff0f5, #ffeef8);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
             transition: all 0.3s ease;
-            border-left: 3px solid #c9a876;
+            border: 3px solid #ffc0cb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .text-card::before {
+            content: '✨';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            animation: twinkle 2s infinite;
         }
 
         .text-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+            border-color: #ff69b4;
         }
 
         .text-card p {
             margin: 0;
-            font-weight: 300;
+            font-weight: 500;
             line-height: 1.8;
-            color: #666;
+            color: #d8577a;
+            font-size: 1.1rem;
         }
 
         /* 특별 텍스트 */
         .special-section {
-            background: linear-gradient(135deg, #c9a876, #d4af37);
+            background: linear-gradient(135deg, #ff69b4, #ff1493, #ffc0cb);
+            background-size: 400% 400%;
+            animation: gradientShift 6s ease infinite;
             color: white;
             text-align: center;
             padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-section::before {
+            content: '🌈 ✨ 💖 🦄 🌸 🎀 🌈 ✨ 💖 🦄 🌸 🎀';
+            position: absolute;
+            top: 20px;
+            left: -100%;
+            font-size: 2rem;
+            animation: float 15s linear infinite;
+            opacity: 0.7;
         }
 
         .special-section h3 {
             color: white;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .special-section p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            opacity: 0.9;
+            font-size: 1.4rem;
+            font-weight: 500;
         }
 
         /* 푸터 */
         .footer {
-            background: #2c2c2c;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
             color: white;
             text-align: center;
             padding: 3rem 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '💖 Thank you for visiting! 💖';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .footer p {
-            font-weight: 300;
-            opacity: 0.8;
+            font-weight: 500;
+            margin-top: 2rem;
         }
 
         /* 애니메이션 */
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-15px); }
+            70% { transform: translateY(-8px); }
+            90% { transform: translateY(-3px); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100vw); }
+        }
+
+        @keyframes float-reverse {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100vw); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
         }
 
         /* 반응형 디자인 */
@@ -427,7 +555,8 @@
             }
 
             .nav-links {
-                display: none;
+                flex-direction: column;
+                gap: 1rem;
             }
 
             .lists-section {
@@ -459,12 +588,12 @@
     <!-- 헤더 -->
     <header class="header">
         <div class="header-content">
-            <div class="logo">PERSONAL</div>
+            <div class="logo">KAWAII 💖</div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="about/">About</a></li>
-                    <li><a href="product/">Product</a></li>
-                    <li><a href="contact/">Contact</a></li>
+                    <li><a href="about/">About 🌸</a></li>
+                    <li><a href="product/">Product 🎀</a></li>
+                    <li><a href="contact/">Contact ✨</a></li>
                 </ul>
             </nav>
         </div>
@@ -473,45 +602,45 @@
     <!-- 히어로 섹션 -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-subtitle">For Every Special Moment</div>
-            <h1 class="hero-title">내 생에<br>첫 홈페이지</h1>
-            <p class="hero-description">제주대학교에서 시작된 웹 개발 여정의 첫 발걸음. 소중한 순간들을 담아내는 디지털 공간을 만들어갑니다.</p>
-            <a href="#about" class="cta-button">Discover More</a>
+            <div class="hero-subtitle">✨ Kawaii Dreams Come True ✨</div>
+            <h1 class="hero-title">내 생에<br>첫 홈페이지 💖</h1>
+            <p class="hero-description">제주대학교에서 시작된 귀여운 웹 여행 🌸 매일매일이 핑크빛 행복으로 가득한 디지털 세상을 만들어요!</p>
+            <a href="#about" class="cta-button">🦄 Let's Go! 🦄</a>
         </div>
     </section>
 
     <!-- 헤더 타이틀 섹션 -->
     <section class="section">
         <div class="container">
-            <h2>내 생에 첫 홈페이지</h2>
-            <h3>내 생에 첫 홈페이지</h3>
-            <h4>내 생에 첫 홈페이지</h4>
-            <h5>내 생에 첫 홈페이지</h5>
-            <h6>내 생에 첫 홈페이지</h6>
+            <h2>🌸 내 생에 첫 홈페이지 🌸</h2>
+            <h3>💖 내 생에 첫 홈페이지 💖</h3>
+            <h4>🎀 내 생에 첫 홈페이지 🎀</h4>
+            <h5>✨ 내 생에 첫 홈페이지 ✨</h5>
+            <h6>🌈 내 생에 첫 홈페이지 🌈</h6>
         </div>
     </section>
 
     <!-- 리스트 섹션 -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Collections</h2>
+            <h2 class="section-title">Kawaii Collections</h2>
             <div class="lists-section">
                 <div class="list-container">
-                    <h3>Ordered Collection</h3>
+                    <h3>🌸 Cherry Blossom List 🌸</h3>
                     <ol>
-                        <li>Hello World</li>
-                        <li>Hello World</li>
-                        <li>Hello World</li>
-                        <li>Hello World</li>
+                        <li>Hello Kitty World 🐱</li>
+                        <li>My Melody Dreams 🐰</li>
+                        <li>Cinnamoroll Cloud ☁️</li>
+                        <li>Pompompurin Cafe 🍮</li>
                     </ol>
                 </div>
                 <div class="list-container">
-                    <h3>Featured Collection</h3>
+                    <h3>💖 Heart Collection 💖</h3>
                     <ul>
-                        <li>Hello World</li>
-                        <li>Hello World</li>
-                        <li>Hello World</li>
-                        <li>Hello World</li>
+                        <li>Kawaii Moments 🌟</li>
+                        <li>Pink Paradise 🌸</li>
+                        <li>Sweet Dreams 🍓</li>
+                        <li>Magic Unicorn 🦄</li>
                     </ul>
                 </div>
             </div>
@@ -521,10 +650,10 @@
     <!-- 이미지 섹션 -->
     <section class="section image-section">
         <div class="container">
-            <h2 class="section-title">Gallery</h2>
+            <h2 class="section-title">Kawaii Gallery</h2>
             <div class="image-gallery">
-                <img src="https://search.pstatic.net/common?type=n&size=150x168&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2FprofileImg%2F62ae3901-b2e7-4190-961c-f9e52875fab9.jpg" alt="프로필 이미지">
-                <img width="200px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a876;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d4af37;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23grad)'/%3E%3Ctext x='100' y='100' text-anchor='middle' dy='0.35em' fill='white' font-size='16' font-weight='300'%3EPersonal Brand%3C/text%3E%3C/svg%3E" alt="브랜드 이미지">
+                <img src="https://i.shgcdn.com/1ec9c187-9579-42d4-be9e-f4161e8df9e1/-/format/auto/-/preview/3000x3000/-/quality/lighter/
+            ">
             </div>
         </div>
     </section>
@@ -532,15 +661,15 @@
     <!-- 특별 섹션 -->
     <section class="special-section">
         <div class="container">
-            <h3>Our Story</h3>
-            <p>제주대에서 실습한 홈페이지 만들기</p>
+            <h3>🌈 Our Kawaii Story 🌈</h3>
+            <p>제주대에서 실습한 핑크빛 홈페이지 만들기 ✨💖✨</p>
         </div>
     </section>
 
     <!-- 비디오 섹션 -->
     <section class="section video-section">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title">Kawaii Experience</h2>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/9BOQjbzn7mU?si=116pjMWKzOpl96xj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
@@ -550,25 +679,25 @@
     <!-- 텍스트 섹션 -->
     <section class="section text-section">
         <div class="container">
-            <h2 class="section-title">Messages</h2>
+            <h2 class="section-title">Kawaii Messages</h2>
             <div class="text-grid">
                 <div class="text-card">
-                    <p>Hello World</p>
+                    <p>Hello Kitty World 🐱💕</p>
                 </div>
                 <div class="text-card">
-                    <p>Hello World</p>
+                    <p>My Melody Dreams 🐰🌸</p>
                 </div>
                 <div class="text-card">
-                    <p class="one two three">Hello World</p>
+                    <p class="one two three">Cinnamoroll Magic ☁️✨</p>
                 </div>
                 <div class="text-card">
-                    <p>Hello World</p>
+                    <p>Pompompurin Cafe 🍮🌟</p>
                 </div>
                 <div class="text-card">
-                    <p>Hello World</p>
+                    <p>Little Twin Stars 🌟👫</p>
                 </div>
                 <div class="text-card">
-                    <p>Hello World</p>
+                    <p>Kuromi Punk Rock 🖤💜</p>
                 </div>
             </div>
         </div>
@@ -577,7 +706,7 @@
     <!-- 푸터 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Personal Brand. All rights reserved.</p>
+            <p>&copy; 2024 Kawaii Brand. Made with 💖 All rights reserved.</p>
         </div>
     </footer>
 
@@ -615,13 +744,48 @@
             });
         });
 
-        // 네비게이션 링크 클릭 이벤트 (기존 기능 유지)
+        // 네비게이션 링크 클릭 이벤트
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                alert(`${link.textContent} 페이지로 이동합니다!`);
+                alert(`${link.textContent} 페이지로 이동합니다! 💖`);
             });
         });
+
+        // 랜덤 이모지 생성
+        function createRandomEmoji() {
+            const emojis = ['🌸', '💖', '🎀', '✨', '🌈', '🦄', '🍓', '🐱', '🐰', '☁️', '🍮', '🌟'];
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.top = '-50px';
+            emoji.style.fontSize = Math.random() * 20 + 20 + 'px';
+            emoji.style.zIndex = '999';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+            
+            document.body.appendChild(emoji);
+            
+            setTimeout(() => {
+                emoji.remove();
+            }, 5000);
+        }
+
+        // 이모지 애니메이션 추가
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // 주기적으로 이모지 생성
+        setInterval(createRandomEmoji, 2000);
     </script>
 </body>
 </html>
